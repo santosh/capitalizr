@@ -1,0 +1,35 @@
+#!/usr/bin/env python
+#-*- coding:utf-8 -*-
+
+# filename: capitalizer.py
+# date created: 21-08-2012 19:19:36 IST
+# purpose: to capitalize words in a txt file, words which has less than 3 words are escaped
+# author : Santosh Kumar <sntshkmr60 at gmail dot com>
+
+
+from os import linesep
+from string import punctuation
+from sys import argv
+
+script, givenfile = argv
+
+with open(givenfile) as file:
+    # List to store the capitalised lines.
+    lines = []
+    for line in file:
+        # Split words by spaces.
+        words = line.split(' ')
+        for i, word in enumerate(words):
+            if len(word.strip(punctuation)) > 3:
+                # Capitalise and replace words longer than 3 (without punctuation)
+                words[i] = word.capitalize()
+        # Join the capitalised words with spaces.
+        lines.append(' '.join(words))
+    # Join the capitalised lines by the line separator
+    capitalised = linesep.join(lines)
+# Optionally, write the capitalised words back to the file.
+
+print(capitalised)
+
+#with open('words.txt', 'w') as file:
+#    file.write(capitalised)
