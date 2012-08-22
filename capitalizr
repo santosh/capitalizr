@@ -18,7 +18,7 @@ with open(givenfile) as file:
     lines = []
     for line in file:
         # Split words by spaces.
-        words = line.split(' ')
+        words = line.split()
         for i, word in enumerate(words):
             if len(word.strip(punctuation)) > 3:
                 # Capitalise and replace words longer than 3 (without punctuation)
@@ -30,6 +30,3 @@ with open(givenfile) as file:
 # Optionally, write the capitalised words back to the file.
 
 print(capitalised)
-
-#with open('words.txt', 'w') as file:
-#    file.write(capitalised)
