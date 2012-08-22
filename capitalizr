@@ -3,7 +3,7 @@
 
 # filename: capitalizer.py
 # date created: 21-08-2012 19:19:36 IST
-# purpose: to capitalize words in a txt file, words which has less than 3 words are escaped
+# purpose: to capitalize words in a txt file, words which has less than 3 words are e
 # author : Santosh Kumar <sntshkmr60 at gmail dot com>
 
 
