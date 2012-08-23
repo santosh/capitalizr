@@ -22,7 +22,8 @@ with open(givenfile) as file:
         for i, word in enumerate(words):
             if len(word.strip(punctuation)) > 3:
                 # Capitalise and replace words longer than 3 (without punctuation)
-                words[i] = word.capitalize()
+                if word != word.upper():
+                    words[i] = word.capitalize()
         # Join the capitalised words with spaces.
         lines.append(' '.join(words))
     # Join the capitalised lines by the line separator
