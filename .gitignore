@@ -1,1 +1,22 @@
-*.pyc
+# Always ignore extensions
+*.diff
+*.err
+.netrwhist
+*.log
+*.tmp
+*.swp
+*~
+*.swo
+/doc/tags
+
+
+# Editors or OS files
+.DS_Store
+._*
+Thumbs.db
+.cache
+.settings
+.tmproj
+*.esproj
+nbproject
+*.sublime-project
