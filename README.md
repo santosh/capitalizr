@@ -15,7 +15,7 @@ it came in my mind, why not use Python for this?
 You will probably have Python installed if you are using Unix.
 
 ##How to Install:##
-Refer to [INSTALL](https://github.com/sntshkmr60/capitalizr/blob/master/INSTALL.md)
+Refer to [INSTALL](https://github.com/santosh/capitalizr.py/blob/master/INSTALL.md)
 file for more instruction related to installation.
 
 
