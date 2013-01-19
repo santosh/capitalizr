@@ -3,9 +3,9 @@
 
 # filename: capitalizer.py
 # date created: 21-08-2012 19:19:36 IST
-# purpose: to capitalize words in a txt file, words which has less than 
+# purpose: to capitalize words in a txt file, words which has less than
 # 3 words are escaped.
-# author : Santosh Kumar <sntshkmr60 at gmail dot com>
+# author : Santosh Kumar <https://twitter.com/sntshk>
 
 
 from os import linesep
@@ -22,7 +22,7 @@ with open(givenfile) as file:
         words = line.split()
         for i, word in enumerate(words):
             if len(word.strip(punctuation)) > 3:
-                # Capitalise and replace words longer than 3 letters (counts 
+                # Capitalise and replace words longer than 3 letters (counts
                 # without punctuation).
                 if word != word.upper():
                     words[i] = word.capitalize()
