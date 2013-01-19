@@ -19,7 +19,7 @@ with open(givenfile) as file:
     lines = []
     for line in file:
         # Split words by spaces.
-        words = line.split()
+        words = line.split(' ')
         for i, word in enumerate(words):
             if len(word.strip(punctuation)) > 3:
                 # Capitalise and replace words longer than 3 letters (counts
