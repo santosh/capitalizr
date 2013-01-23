@@ -2,6 +2,7 @@
 #-*- coding:utf-8 -*-
 
 # filename: capitalizer.py
+
 # date created: 21-08-2012 19:19:36 IST
 # purpose: to capitalize words in a txt file, words which has less than
 # 3 words are escaped.
@@ -15,8 +16,6 @@ from sys import argv
 script, givenfile = argv
 
 with open(givenfile) as file:
-    # List to store the capitalised lines.
-    lines = []
     for line in file:
         # Clears the extra line after each line, see issue #1 and #3
         line = line.rstrip('\n')
@@ -28,10 +27,5 @@ with open(givenfile) as file:
                 # without punctuation).
                 if word != word.upper():
                     words[i] = word.capitalize()
-        # Join the capitalised words with spaces.
-        lines.append(' '.join(words))
-    # Join the capitalised lines by the line separator.
-    capitalised = linesep.join(lines)
-# Optionally, write the capitalised words back to the file.
-
-print(capitalised)
+        # Print the capitalised words with spaces.
+        print(' '.join(words))
