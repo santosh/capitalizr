@@ -1,4 +1,5 @@
 # Always ignore extensions
+.gitignore
 *.diff
 *.err
 .netrwhist
