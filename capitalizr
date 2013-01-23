@@ -18,6 +18,8 @@ with open(givenfile) as file:
     # List to store the capitalised lines.
     lines = []
     for line in file:
+        # Clears the extra line after each line, see issue #1 and #3
+        line = line.rstrip('\n')
         # Split words by spaces.
         words = line.split(' ')
         for i, word in enumerate(words):
