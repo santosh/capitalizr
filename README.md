@@ -21,7 +21,7 @@ file for more instruction related to installation.
 
 ##How to Use:##
 After following the instructions in
-[INSTALL](https://github.com/santosh/capitalizr.py/blob/master/INSTALL.md)) file,
+[INSTALL](https://github.com/santosh/capitalizr.py/blob/master/INSTALL.md) file,
 you should be able to type `capitalizr` in terminal. Type capitalizr followed by
 the filename and the output will be on the screen. E.g. `capitalizr inputfile.txt`
 
