@@ -1,6 +1,6 @@
 #Installation Instruction:#
 
-##On Unix##
+##On UNIX##
 All you need to do is to download this file and place it in one of your
 bin directory. I would suggest to make `bin` directory in you home
 directory for this.

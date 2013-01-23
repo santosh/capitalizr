@@ -1,4 +1,4 @@
-**Capitalizr** - Its a utility which lets you capitalize *(upcase the first
+**capitalizr** - It's a utility that lets you capitalize *(upcase the first
 letter of the words, also called capitalcase)* words in a file, leaving the
 words which have 3 or less characters. The file may look pretty if it has all
 words in capitalcase in it. I was inspired to create this file/project when
@@ -12,7 +12,7 @@ it came in my mind, why not use Python for this?
  * Unix/Linux
  * Python
 
-You will probably have Python installed if you are using Unix.
+You will probably have Python installed if you are using UNIX.
 
 ##How to Install:##
 Refer to [INSTALL](https://github.com/santosh/capitalizr.py/blob/master/INSTALL.md)
@@ -20,9 +20,10 @@ file for more instruction related to installation.
 
 
 ##How to Use:##
-After installing, you should be able to type `capitalizr` in terminal.
-Type capitalizr followed by the filename and the output will be on
-the screen. E.g. `capitalizr inputfile.txt`
+After following the instructions in
+[INSTALL](https://github.com/santosh/capitalizr.py/blob/master/INSTALL.md)) file,
+you should be able to type `capitalizr` in terminal. Type capitalizr followed by
+the filename and the output will be on the screen. E.g. `capitalizr inputfile.txt`
 
 ##Tricks:##
 You can write the output into file by doing appending `> outputfile.txt`.

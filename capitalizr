@@ -17,7 +17,7 @@ script, givenfile = argv
 
 with open(givenfile) as file:
     for line in file:
-        # Clears the extra line after each line, see issue #1 and #3
+        # Clear the extra line after each line, see issue #1 and #3
         line = line.rstrip('\n')
         # Split words by spaces.
         words = line.split(' ')
