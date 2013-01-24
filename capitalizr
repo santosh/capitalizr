@@ -8,8 +8,6 @@
 # 3 words are escaped.
 # author : Santosh Kumar <https://twitter.com/sntshk>
 
-
-from os import linesep
 from string import punctuation
 from sys import argv
 
