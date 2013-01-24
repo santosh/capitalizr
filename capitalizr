@@ -9,21 +9,35 @@
 # author : Santosh Kumar <https://twitter.com/sntshk>
 
 from string import punctuation
-from sys import argv
+from sys import argv, stdin
+from argparse import ArgumentParser, FileType
 
-script, givenfile = argv
+parser = ArgumentParser(
+    prog='capitalizr',
+    description='capitalize words, leaving words less than 3 characters',
+    epilog='see project page: http://git.io/bRL0AA for more info'
+    )
 
-with open(givenfile) as file:
-    for line in file:
-        # Clear the extra line after each line, see issue #1 and #3
-        line = line.rstrip('\n')
-        # Split words by spaces.
-        words = line.split(' ')
-        for i, word in enumerate(words):
-            if len(word.strip(punctuation)) > 3:
-                # Capitalise and replace words longer than 3 letters (counts
-                # without punctuation).
-                if word != word.upper():
-                    words[i] = word.capitalize()
-        # Print the capitalised words with spaces.
-        print(' '.join(words))
+parser.add_argument(
+    'inputfile',
+    type=FileType('r'),
+    nargs='?',
+    default=stdin,
+    help='file to be capitalized; usually a .txt file'
+    )
+
+args = parser.parse_args()
+
+for line in args.inputfile:
+    # Clear the extra line after each line, see issue #1 and #3
+    line = line.rstrip('\n')
+    # Split words by spaces.
+    words = line.split(' ')
+    for i, word in enumerate(words):
+        if len(word.strip(punctuation)) > 3:
+            # Capitalise and replace words longer than 3 letters (counts
+            # without punctuation).
+            if word != word.upper():
+                words[i] = word.capitalize()
+    # Print the capitalised words with spaces.
+    print(' '.join(words))
