@@ -26,18 +26,21 @@ parser.add_argument(
     help='file to be capitalized; usually a .txt file'
     )
 
-args = parser.parse_args()
-
-for line in args.inputfile:
-    # Clear the extra line after each line, see issue #1 and #3
-    line = line.rstrip('\n')
-    # Split words by spaces.
-    words = line.split(' ')
-    for i, word in enumerate(words):
-        if len(word.strip(punctuation)) > 3:
-            # Capitalise and replace words longer than 3 letters (counts
-            # without punctuation).
-            if word != word.upper():
-                words[i] = word.capitalize()
-    # Print the capitalised words with spaces.
-    print(' '.join(words))
+# Check if first argument is nothing, if so print help
+if len(argv) < 2:
+    parser.print_help()
+else:
+    args = parser.parse_args()
+    for line in args.inputfile:
+        # Clear the extra line after each line, see issue #1 and #3
+        line = line.rstrip('\n')
+        # Split words by spaces.
+        words = line.split(' ')
+        for i, word in enumerate(words):
+            if len(word.strip(punctuation)) > 3:
+                # Capitalise and replace words longer than 3 letters (counts
+                # without punctuation).
+                if word != word.upper():
+                    words[i] = word.capitalize()
+        # Print the capitalised words with spaces.
+        print(' '.join(words))
