@@ -10,13 +10,25 @@
 
 from string import punctuation
 from sys import argv, stdin
-from argparse import ArgumentParser, FileType
+from argparse import ArgumentParser, FileType, RawDescriptionHelpFormatter
 
 parser = ArgumentParser(
     prog='capitalizr',
     description='capitalize words, leaving words less than 3 characters',
-    epilog='see project page: http://git.io/bRL0AA for more info'
-    )
+    formatter_class=RawDescriptionHelpFormatter,
+    epilog='''examples:
+
+    # Show capitalized text in terminal window
+    $ capitalizr textfile.txt
+
+    # Create another file with capitalized text
+    $ capitalizr textfile.txt > outputfile.txt
+
+    # Pipe over other terminal apps (e.g. `cat`)
+    $ cat textfile.txt | capitalizr -
+
+SEE PROJECT PAGE: http://git.io/bRL0AA FOR MORE INFO
+''')
 
 parser.add_argument(
     'inputfile',
