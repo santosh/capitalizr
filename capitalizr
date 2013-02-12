@@ -9,6 +9,7 @@
 # author : Santosh Kumar <https://twitter.com/sntshk>
 
 from string import punctuation
+from os import linesep
 from sys import argv, stdin
 from argparse import ArgumentParser, FileType, RawDescriptionHelpFormatter
 
@@ -38,21 +39,52 @@ parser.add_argument(
     help='file to be capitalized; usually a .txt file'
     )
 
+parser.add_argument(
+    '-o',
+    dest='outputfile',
+    nargs='?',
+    help='file to store capitalized content.'
+    )
+
 # Check if first argument is nothing, if so print help
 if len(argv) < 2:
     parser.print_help()
 else:
+    # Parse the argument here, parsing it before the if block would create error
     args = parser.parse_args()
-    for line in args.inputfile:
-        # Clear the extra line after each line, see issue #1 and #3
-        line = line.rstrip('\n')
-        # Split words by spaces.
-        words = line.split(' ')
-        for i, word in enumerate(words):
-            if len(word.strip(punctuation)) > 3:
-                # Capitalise and replace words longer than 3 letters (counts
-                # without punctuation).
-                if word != word.upper():
-                    words[i] = word.capitalize()
-        # Print the capitalised words with spaces.
-        print(' '.join(words))
+    # Check if output file is provided, if so write processed contents to it.
+    if args.outputfile:
+        # List to store the capitalised lines.
+        lines = []
+        for line in args.inputfile:
+            # Clear the extra line after each line, see issue #1 and #3
+            line = line.rstrip('\n')
+            # Split words by spaces.
+            words = line.split(' ')
+            for i, word in enumerate(words):
+                if len(word.strip(punctuation)) > 3:
+                    # Capitalise and replace words longer than 3 letters (counts
+                    # without punctuation).
+                    if word != word.upper():
+                        words[i] = word.capitalize()
+            # Join the capitalised words with spaces.
+            lines.append(' '.join(words))
+        # Join the capitalised lines by the line separator.
+        capitalised = linesep.join(lines)
+        # Do the actual work of writing to the file.
+        with open(args.outputfile, 'w') as f:
+            f.write(capitalised)
+    else:
+        for line in args.inputfile:
+            # Clear the extra line after each line, see issue #1 and #3
+            line = line.rstrip('\n')
+            # Split words by spaces.
+            words = line.split(' ')
+            for i, word in enumerate(words):
+                if len(word.strip(punctuation)) > 3:
+                    # Capitalise and replace words longer than 3 letters (counts
+                    # without punctuation).
+                    if word != word.upper():
+                        words[i] = word.capitalize()
+            # Print the capitalised words with spaces.
+            print(' '.join(words))
