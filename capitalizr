@@ -28,7 +28,7 @@ parser = ArgumentParser(
     # Pipe over other terminal apps (e.g. `cat`)
     $ cat textfile.txt | capitalizr -
 
-SEE PROJECT PAGE: http://git.io/bRL0AA FOR MORE INFO
+SEE PROJECT PAGE: http://git.io/-3fOzA FOR MORE INFO
 ''')
 
 parser.add_argument(
