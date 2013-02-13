@@ -1,12 +1,7 @@
-**capitalizr** - It's a utility that lets you capitalize *(upcase the first
-letter of the words, also called capitalcase)* words in a file, leaving the
-words which have 3 or less characters. The file looks pretty if it has all
-words in capitalcase in it. I was inspired to create this file/project when
-I was listening to music. Everytime I listen to any new song I try to write
-its lyrics on my own. Just slowing down the playing speed of song didn't help
-that much, I was suppose to loop the song over a specific time and listen what
-is being sung, and in hurry I wrote whole the script in lowercase. So one day
-it came in my mind, why not use Python for this?
+**capitalizr** - It's a utility that lets you change the case *(lowercase to
+uppercase the letter of the words)* words in a file, leaving the words which
+have 3 or less letters. The file looks pretty if it has all words in
+capitalcase in it.
 
 ##Requirements:##
  * Unix/Linux
@@ -15,16 +10,14 @@ it came in my mind, why not use Python for this?
 You will probably have Python installed if you are using UNIX :)
 
 ##How to Install:##
-Refer to [INSTALL](https://github.com/santosh/capitalizr/blob/master/INSTALL.md)
-file for more instruction related to installation.
+Refer to [INSTALL][1] file for more instruction related to installation.
 
 
 ##How to Use:##
 ###Basic###
-After following the instructions in
-[INSTALL](https://github.com/santosh/capitalizr/blob/master/INSTALL.md) file,
-you should be able to type `capitalizr` in terminal. Type capitalizr followed by
-the filename and the output will be on the screen. E.g. `capitalizr inputfile.txt`
+After following the instructions in [INSTALL][1] file, you should be able
+to type `capitalizr` in terminal. Type capitalizr followed by the filename
+and the output will be on the screen. E.g. `capitalizr inputfile.txt`
 
 ###Saving Output###
 You can write the output into file by doing appending `> outputfile.txt`.
@@ -34,3 +27,22 @@ be on a file named outputfile.txt
 ###Piping###
 capitalizr also supports UNIX piping. So you can do
 `cat inputfile.txt | capitalizr -` and it will work.
+
+##To do:##
+These might seem silly ;) Here are implementation I want, priority wise:
+
+ * Manual page (And the installation of it)
+ * Put it in repository list of Ubuntu, Fedora etc.
+ * Deployment with Debian package and Windows installer.
+ * Implement GUI
+ * Android App
+ * Internationalization
+
+See also the `sandbox` branch of the repository.
+
+##Contributors:##
+
+ * [santosh][2]
+
+  [1]: https://github.com/santosh/capitalizr/blob/master/INSTALL.md
+  [2]: https://github.com/santosh
