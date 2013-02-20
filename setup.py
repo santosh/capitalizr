@@ -12,7 +12,7 @@ if os.getuid() != 0:
 # Definitions
 installManto = '/usr/share/man/man1/'
 installBinTo = '/usr/local/bin/'
-capsLoc = '/usr/share/bin/capitalizr'
+capsLoc = '/usr/local/bin/capitalizr'
 mansLoc = '/usr/share/man/man1/capitalizr.1.gz'
 
 def install():
