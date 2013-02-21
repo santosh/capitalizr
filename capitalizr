@@ -46,6 +46,13 @@ parser.add_argument(
     help='file to store capitalized content.'
     )
 
+parser.add_argument(
+    '-v',
+    '--version',
+    action='version',
+    version='%(prog)s 1.00.05'
+    )
+
 # Check if first argument is nothing, if so print help
 if len(argv) < 2:
     parser.print_help()
