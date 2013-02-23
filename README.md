@@ -28,19 +28,28 @@ be on a file named outputfile.txt
 capitalizr also supports UNIX piping. So you can do
 `cat inputfile.txt | capitalizr -` and it will work.
 
+##Bugs##
+Bugs and suggestions should be reported at: https://github.com/santosh/capitalizr/issues
+
 ##To do:##
 These might seem silly ;) Here are implementation I want, priority wise:
 
- * Manual page (And the installation of it)
  * Put it in repository list of Ubuntu, Fedora etc.
  * Deployment with Debian package and Windows installer.
  * Implement GUI
  * Android App
  * Internationalization
+ * ~~Manual page (And the installation of it)~~ ✔
 
 See also the `sandbox` branch of the repository.
 
 ##Contributors:##
+Feel free to contribute, just fork, clone, do your changes, push and send me
+a pull request.
+
+Here are the contributors:
+
+<!-- only add yourself if you think you really contributed -->
 
  * [santosh][2]
 
