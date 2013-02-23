@@ -10,8 +10,12 @@ capitalcase in it.
 You will probably have Python installed if you are using UNIX :)
 
 ##How to Install:##
-Refer to [INSTALL][1] file for more instruction related to installation.
+The simplest installation (for UNIX) is [download][3]/clone the archive, extract
+it and run the setup:
 
+    $ python setup.py install
+
+Refer to [INSTALL][1] file for more instruction related to installation.
 
 ##How to Use:##
 ###Basic###
@@ -55,3 +59,4 @@ Here are the contributors:
 
   [1]: https://github.com/santosh/capitalizr/blob/master/INSTALL.md
   [2]: https://github.com/santosh
+  [3]: https://github.com/santosh/capitalizr/archive/master.zip
