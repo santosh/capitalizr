@@ -3,6 +3,10 @@ uppercase the letter of the words)* words in a file, leaving the words which
 have 3 or less letters. The file looks pretty if it has all words in
 capitalcase in it.
 
+##Why not sed?##
+ * Because capitalizr is easy to use
+ * sed doesn't takes input from stdin, it just works on piping.
+
 ##Requirements:##
  * Unix/Linux
  * Python
