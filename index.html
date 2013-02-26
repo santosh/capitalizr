@@ -1,89 +1,111 @@
 <!DOCTYPE html>
 <html>
+
   <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="capitalizr : A command line program to capitalize/upcase words in a file. First letter of any words are capitalized." />
 
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-    <title>capitalizr by santosh</title>
+    <title>capitalizr</title>
   </head>
 
   <body>
 
-    <header>
-      <div class="container">
-        <h1>capitalizr</h1>
-        <h2>A command line program to capitalize/upcase words in a file. First letter of any words are capitalized.</h2>
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/santosh/capitalizr">View on GitHub</a>
 
-        <section id="downloads">
-          <a href="https://github.com/santosh/capitalizr/zipball/master" class="btn">Download as .zip</a>
-          <a href="https://github.com/santosh/capitalizr/tarball/master" class="btn">Download as .tar.gz</a>
-          <a href="https://github.com/santosh/capitalizr" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
-        </section>
-      </div>
-    </header>
+          <h1 id="project_title">capitalizr</h1>
+          <h2 id="project_tagline">A command line program to capitalize/upcase words in a file. First letter of any words are capitalized.</h2>
 
-    <div class="container">
-      <section id="main_content">
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/santosh/capitalizr/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/santosh/capitalizr/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
         <p><strong>capitalizr</strong> - It's a utility that lets you change the case <em>(lowercase to
 uppercase the letter of the words)</em> words in a file, leaving the words which
 have 3 or less letters. The file looks pretty if it has all words in
 capitalcase in it.</p>
 
-<h2>Requirements:</h2>
+<h2>why not sed?</h2>
 
 <ul>
-<li>Unix/Linux</li>
-<li>Python</li>
-</ul><p>You will probably have Python installed if you are using UNIX :)</p>
+<li>Because capitalizr is easy to use</li>
+<li>sed doesn't takes input from stdin, it just works on piping.</li>
+</ul><h2>How to Install</h2>
 
-<h2>How to Install:</h2>
+<p>The one and only requirement is Python, if you are on any variant of UNIX 
+(e.g. Linux, *BSD, Mac etc) then you have a good luck, else <a href="http://www.python.org/download/">download</a> it.
+The simplest installation (for UNIX) is <a href="https://github.com/santosh/capitalizr/archive/master.zip">download</a>/clone the archive, extract
+it <code>cd</code> to it and run the setup:</p>
+
+<pre><code>$ python setup.py install
+</code></pre>
 
 <p>Refer to <a href="https://github.com/santosh/capitalizr/blob/master/INSTALL.md">INSTALL</a> file for more instruction related to installation.</p>
 
-<h2>How to Use:</h2>
-
-<h3>Basic</h3>
+<h2>Usages</h2>
 
 <p>After following the instructions in <a href="https://github.com/santosh/capitalizr/blob/master/INSTALL.md">INSTALL</a> file, you should be able
 to type <code>capitalizr</code> in terminal. Type capitalizr followed by the filename
-and the output will be on the screen. E.g. <code>capitalizr inputfile.txt</code></p>
+and the output will be on the screen:</p>
 
-<h3>Saving Output</h3>
+<pre><code>$ capitalizr inputfile.txt
+</code></pre>
 
-<p>You can write the output into file by doing appending <code>&gt; outputfile.txt</code>.
-Like this: <code>capitalizr inputfile.txt &gt; outputfile.txt</code>. And the output will
-be on a file named outputfile.txt</p>
+<p>Pipe input to it</p>
 
-<h3>Piping</h3>
+<pre><code>cat inputfile.txt | capitalizr -
+</code></pre>
 
-<p>capitalizr also supports UNIX piping. So you can do
-<code>cat inputfile.txt | capitalizr -</code> and it will work.</p>
+<p>Input from <strong>stdin</strong></p>
 
-<h2>To do:</h2>
+<pre><code>the quick brown fox jumps over the lazy dog
+^D
+the Quick Brown fox Jumps Over the Lazy dog
+</code></pre>
 
-<p>These might seem silly ;) Here are implementation I want, priority wise:</p>
+<p>You can write the output into file by passing <code>-o</code> followed by output filename</p>
 
-<ul>
-<li>Manual page (And the installation of it)</li>
-<li>Put it in repository list of Ubuntu, Fedora etc.</li>
-<li>Deployment with Debian package and Windows installer.</li>
-<li>Implement GUI</li>
-<li>Android App</li>
-<li>Internationalization</li>
-</ul><p>See also the <code>sandbox</code> branch of the repository.</p>
+<pre><code>capitalizr inputfile.txt -o outputfile.txt
+</code></pre>
 
-<h2>Contributors:</h2>
+<p>And the output will be on a file named outputfile.txt</p>
 
-<ul>
-<li><a href="https://github.com/santosh">santosh</a></li>
-</ul>
+<h2>Bugs</h2>
+
+<p>Bugs and suggestions should be reported at: <a href="https://github.com/santosh/capitalizr/issues">https://github.com/santosh/capitalizr/issues</a></p>
       </section>
     </div>
 
-    
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">capitalizr maintained by <a href="https://github.com/santosh">santosh</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("Update from README.md, Remove ToDo and Contributors section");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+
   </body>
 </html>
