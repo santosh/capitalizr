@@ -50,7 +50,7 @@ parser.add_argument(
     '-v',
     '--version',
     action='version',
-    version='%(prog)s 1.00.05'
+    version='%(prog)s 1.01.00'
     )
 
 # Check if first argument is nothing, if so print help
