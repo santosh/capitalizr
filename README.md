@@ -1,16 +1,15 @@
-
 **capitalizr** - It's a utility that lets you change the case *(lowercase to
 uppercase the letter of the words)* words in a file, leaving the words which
 have 3 or less letters. The file looks pretty if it has all words in
 capitalcase in it.
 
 ##why not sed?##
- * Because capitalizr is easy to use
+ * because capitalizr is easy to use, just damn simple
  * sed doesn't takes input from stdin, it just works on piping.
 
-##How to Install:##
+##Install##
 The one and only requirement is Python, if you are on any variant of UNIX 
-(e.g. Linux, \*BSD, Mac etc) then you have a good luck, else [download][4] it.
+*(e.g. Linux, *BSD, Mac etc)* then you have a good luck, else [download][4] it.
 The simplest installation (for UNIX) is [download][3]/clone the archive, extract
 it `cd` to it and run the setup:
 
@@ -25,7 +24,6 @@ and the output will be on the screen:
 
     $ capitalizr inputfile.txt
 
-
 Pipe input to it
 
     $ cat inputfile.txt | capitalizr -
@@ -37,15 +35,18 @@ Input from **stdin**
     ^D
     the Quick Brown fox Jumps Over the Lazy dog
 
-You can write the output into file by passing `-o` followed by output filename
+You can write the output into file by passing `-o` followed by output filename,
+and the output will be on a file named outputfile.txt
 
     $ capitalizr inputfile.txt -o outputfile.txt
 
-And the output will be on a file named outputfile.txt
+Override the default length of words to be escaped. The default it 3
 
+    $ capitalizr -t 1 inputfile.txt
 
-##Bugs##
-Bugs and suggestions should be reported at: https://github.com/santosh/capitalizr/issues
+##Bugs? Suggestions? Questions?##
+Questions approaching in your mind? Found any bugs? Have any suggestions?
+Don't hesitate to post it at: https://github.com/santosh/capitalizr/issues
 
 ##To do##
 These might seem silly ;) Here are implementation I want, priority wise:

@@ -1,12 +1,13 @@
 #!/usr/bin/env python
 #-*- coding:utf-8 -*-
 
-# filename: capitalizer.py
-
+# filename  : capitalizer.py
 # date created: 21-08-2012 19:19:36 IST
-# purpose: to capitalize words in a txt file, words which has less than
+# purpose   : to capitalize words in a txt file, words which has less than
 # 3 words are escaped.
-# author : Santosh Kumar <https://twitter.com/sntshk>
+# author    : Santosh Kumar <https://twitter.com/sntshk>
+# copyright : Copyright (c) 2012-2013 Santosh Kumar <sntshkmr60@gmail.com>
+# license   : See LICENSE file in root directory
 
 from string import punctuation
 from os import linesep
@@ -47,6 +48,15 @@ parser.add_argument(
     )
 
 parser.add_argument(
+    '-t',
+    '--threshold',
+    type=int,
+    default=3,
+    dest='threshold',
+    help='words with n or less letters escaped'
+    )
+
+parser.add_argument(
     '-v',
     '--version',
     action='version',
@@ -69,7 +79,7 @@ else:
             # Split words by spaces.
             words = line.split(' ')
             for i, word in enumerate(words):
-                if len(word.strip(punctuation)) > 3:
+                if len(word.strip(punctuation)) > args.threshold:
                     # Capitalise and replace words longer than 3 letters (counts
                     # without punctuation).
                     if word != word.upper():
@@ -88,7 +98,7 @@ else:
             # Split words by spaces.
             words = line.split(' ')
             for i, word in enumerate(words):
-                if len(word.strip(punctuation)) > 3:
+                if len(word.strip(punctuation)) > args.threshold:
                     # Capitalise and replace words longer than 3 letters (counts
                     # without punctuation).
                     if word != word.upper():
