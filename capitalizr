@@ -92,16 +92,19 @@ else:
         with open(args.outputfile, 'w') as f:
             f.write(capitalised)
     else:
-        for line in args.inputfile:
-            # Clear the extra line after each line, see issue #1 and #3
-            line = line.rstrip('\n')
-            # Split words by spaces.
-            words = line.split(' ')
-            for i, word in enumerate(words):
-                if len(word.strip(punctuation)) > args.threshold:
-                    # Capitalise and replace words longer than 3 letters (counts
-                    # without punctuation).
-                    if word != word.upper():
-                        words[i] = word.capitalize()
-            # Print the capitalised words with spaces.
-            print(' '.join(words))
+        if sys.argv[1] == "-":
+            pass
+        else:
+            for line in args.inputfile:
+                # Clear the extra line after each line, see issue #1 and #3
+                line = line.rstrip('\n')
+                # Split words by spaces.
+                words = line.split(' ')
+                for i, word in enumerate(words):
+                    if len(word.strip(punctuation)) > args.threshold:
+                        # Capitalise and replace words longer than 3 letters (counts
+                        # without punctuation).
+                        if word != word.upper():
+                            words[i] = word.capitalize()
+                # Print the capitalised words with spaces.
+                print(' '.join(words))

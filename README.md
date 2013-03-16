@@ -30,7 +30,7 @@ Pipe input to it
 
 Input from **stdin**
 
-    $ capitalizr
+    $ capitalizr -
     the quick brown fox jumps over the lazy dog
     ^D
     the Quick Brown fox Jumps Over the Lazy dog
