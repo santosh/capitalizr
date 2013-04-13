@@ -20,6 +20,7 @@ mansLoc = '/usr/share/man/man1/capitalizr.1.gz'
 def install():
     shutil.copy2('doc/capitalizr.1.gz', installManto)
     shutil.copy2('capitalizr', installBinTo)
+    os.chmod(installManto + 'capitalizr.1.gz', 1230)
 
 
 def uninstall():
