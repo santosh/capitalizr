@@ -1,65 +1,30 @@
 #!/usr/bin/env python
 #-*- coding: utf-8 -*-
 
-import os
-import sys
-import shutil
-
-# Quit if not run as root/sudo
-if os.getuid() != 0:
-    sys.exit("can't proceed, sudo privileges needed")
-
-
-# {{ Definition of variables and functions
-installManto = '/usr/share/man/man1/'
-installBinTo = '/usr/local/bin/'
-capsLoc = '/usr/local/bin/capitalizr'
-mansLoc = '/usr/share/man/man1/capitalizr.1.gz'
-
-
-def install():
-    shutil.copy2('doc/capitalizr.1.gz', installManto)
-    shutil.copy2('capitalizr', installBinTo)
-    os.chmod(installManto + 'capitalizr.1.gz', 1230)
-
-
-def uninstall():
-    os.remove(capsLoc)
-    os.remove(mansLoc)
-
-
-def update():
-    uninstall()
-    install()
-
-usage = """usage: setup.py [install | uninstall]
-
-installer for capitalizr
-
-arguments:
-  install        installs capitalizr, updates if already installed
-  uninstall      uninstalls capitalizr
-""".rstrip('\n')
-# }}
-
+import os, sys, shutil
 try:
-    if sys.argv[1] == 'install':
-        if os.path.isfile(capsLoc) or os.path.isfile(mansLoc):
-            print("the files exists, updating..")
-            update()
-            print("done")
-        else:
-            print("running the initial setup...")
-            install()
-            print("installed; see 'man capitalizr' for more info")
-    elif sys.argv[1] == 'uninstall':
-        if os.path.isfile(capsLoc) or os.path.isfile(mansLoc):
-            print("uninstalling..")
-            uninstall()
-            print("cleaned..")
-        else:
-            print("already uninstalled..")
-    else:
-        print(usage)
-except IndexError:
-    print(usage)
+    from setuptools import setup
+except ImportError:
+    from distutils.core import setup
+
+setup(
+    name='capitalizr',
+    version='1.02.00',
+    author='Santosh Kumar',
+    author_email='sntshkmr60@gmail.com',
+    packages=['capitalizr'],
+    scripts=['bin/capitalizr'],
+    url='https://github.com/santosh/capitalizr',
+    zip_safe=False,
+    include_package_data=True,
+    license=open('LICENSE').read(),
+    description='capitalizr changes the case of first letter of any word (lowercase to uppercase)'
+    )
+
+if 'install' in sys.argv:
+    man_path = '/usr/share/man/man1/'
+    if os.path.exists(man_path):
+        man_page = "doc/capitalizr.1.gz"
+        shutil.copy2(man_page, man_path)
+        os.chmod(man_path + 'capitalizr.1.gz', int('444', 8))
+        print("see manual page: man capitalizr")

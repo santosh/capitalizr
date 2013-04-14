@@ -1,5 +1,9 @@
+# Python specific
+*.egg-info
+*.py[co]
+dist/
+
 # Always ignore extensions
-.gitignore
 *.diff
 *.err
 .netrwhist
