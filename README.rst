@@ -16,7 +16,8 @@ The one and only requirement is Python, if you are on any variant of UNIX
 *(e.g. Linux, *BSD, Mac etc)* then you have a good luck, else `download <http://www.python.org/download/>`__ it.
 The simplest installation (for UNIX) is `download <https://github.com/santosh/capitalizr/archive/master.zip>`__/clone the archive, extract
 it ``cd`` to it and run the setup::
-    $ pip install capitalizr
+
+    $ python setup.py install
 
 Refer to `INSTALL`_ file for more instruction related to installation.
 
