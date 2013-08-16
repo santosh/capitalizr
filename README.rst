@@ -79,3 +79,10 @@ Here are the contributors:
 - `santosh <https://github.com/santosh>`__
 
 .. _`INSTALL`: https://github.com/santosh/capitalizr/blob/master/INSTALL.rst
+
+.. image:: https://travis-ci.org/santosh/capitalizr.png
+        :target: https://travis-ci.org/santosh/capitalizr
+.. image:: https://pypip.in/v/capitalizr/badge.png
+        :target: https://crate.io/packages/capitalizr
+.. image:: https://pypip.in/d/capitalizr/badge.png
+        :target: https://crate.io/packages/capitalizr
