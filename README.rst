@@ -82,7 +82,7 @@ Here are the contributors:
 
 .. image:: https://travis-ci.org/santosh/capitalizr.png
         :target: https://travis-ci.org/santosh/capitalizr
-.. image:: https://pypip.in/v/capitalizr/badge.png
+.. image:: https://img.shields.io/pypi/v/capitalizr.svg
         :target: https://crate.io/packages/capitalizr
-.. image:: https://pypip.in/d/capitalizr/badge.png
+.. image:: https://img.shields.io/pypi/dm/capitalizr.svg
         :target: https://crate.io/packages/capitalizr
